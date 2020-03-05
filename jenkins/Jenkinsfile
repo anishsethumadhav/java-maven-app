@@ -26,6 +26,6 @@ node {
 
         stage('Deliver') 
           {
-                sh 'bash ./jenkins/deliver.sh'
+                sh './jenkins/scripts/deliver.sh'
         }
 }
