@@ -2,6 +2,12 @@ pipeline {
     agent any
     
     stages {
+         stage('Docker node test') {
+      agent {
+        docker {
+          image 'node:7-alpine'
+          args '--name docker-node' // list any args
+        }
         stage('Build') {
             steps {
                 sh 'mvn -B -DskipTests clean package'
